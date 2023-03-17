@@ -1,0 +1,102 @@
+<html>
+    <head>
+        <title>Django</title>
+    </head>
+    <style>
+        .li{
+            color:#FFFFFF;
+            
+            padding:10px;
+          
+            list-style-type:none;
+            margin-bottom:8px;
+            margin-top:-18%;
+            
+        }
+        .ul{
+           
+            display:flex;
+            flex-wrap: wrap;
+            aling-intens:left;
+            text-align: left;
+            margin-left:70%;
+            margin-bottom:18px;
+            padding-top:-130px;
+            border-radius:15px;
+            
+        }.nav{
+            background-color:#10213E;
+            margin-bottom:15px;
+            padding-top:1%;
+            padding-left:2%;
+            border: solid #0D1D33;
+            border-radius:15px;
+           
+        }.la{
+            text-decoration:none;
+            color:#FAFCFF;
+            font-size:18px;
+        }
+
+
+    </style>
+    <div class="nav">
+    <div style="color:#ffffff;padding-top:40px;padding-top:-10%;">
+        <a style="padding-bottom:110px;margin-left>:20px;">LOGO</a>
+    </div>
+    <nav >
+
+        
+        <ul class="ul">
+        <li class="li">
+           <a  class="la" href="#">HOME</a>
+        </li>
+       
+        <li class="li" >
+            <a class="la" href="{% url 'dados' %}">ADICIONAR</a>
+        </li>
+        <li class="li">
+            <a class="la" href="#">VOLTAR</a>
+        </li>
+
+
+        </ul>
+    </nav>
+</div>
+
+
+
+
+    <body style="background-color:#0D1D33">
+
+<br><br>    
+        <center><h3 style="font-size:40px;color:#E3E7F0;">Lista dos <i style="color:#F7EB15;">CLIENTES</i></h3></center>  
+        <hr> 
+        <br> 
+    <div style="font-size:20px; margin-left:2%; text-aling:center;background-color:;border-radius:15px;display:flex;flex-wrap: wrap;">
+        {% for dado in dados %}
+        <div style="width:550px;margin:14px;background-color:#273653;color:white;padding-left:6px; border-radius:15px;padding:10px; border: solid #0E2A36;">
+          <div style="color:#00FF19;font-size:20px;"> {{dado.nome}} 
+            {{dado.sobrenome}}</div>  
+          CPF: {{dado.cpf}}<br>
+          Peso:  {{dado.peso}}<br>
+          Nascimento: {{dado.nascimento}}<br>
+          NUMERO: {{dado.numero}}<br>
+          SEXO: {{dado.sexo}}
+           <div style="margin-left:70%; margin-top:-23%;margin-bottom:%;">
+           <img style="border-radius:50%; alingner-intens:left;" width= "150px" height="150px" src=" {{dado.foto.url}}" >
+           </div>
+         
+          
+          
+        </div>
+          
+           
+           
+        {% endfor %} 
+    </div>
+    </body>
+</html>
+
+
+

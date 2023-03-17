@@ -1,0 +1,15 @@
+{% block conte %}
+<body style="background-color:#0D1D33">
+<center>
+<div style="text-align: center; width:700px; border: solid #0E2A36; margin-top:4%;background-color:#45484F;color:#ffffff;">
+<form  style="font-size:22px;" method="post"enctype="multipart/form-data">
+{% csrf_token %}
+{{ form.as_p }}
+
+<button style="padding-left:20px;padding-right:20px;padding-bottom:10px;padding-top:10px;background-color:#262C9D;" type="submit">criar</button>
+</from>
+</div>
+</center>
+
+</body>
+{% endblock  %}
